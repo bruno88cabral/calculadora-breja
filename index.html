@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#ffc333">
+	<title>Calculadora de Breja</title>
+	<link rel="stylesheet" href="css/breja.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">	
+</head>
+<body>
+	<header>
+		<h1>Calculadora de Breja</h1>
+	</header>	
+
+	<nav class="navbar">
+		<a href="#" class="nav-link">Sobre</a>
+		<a href="#" class="nav-link">Aprenda</a>
+		<a href="#" class="nav-link">Calculadora de Bar</a>
+	</nav>
+
+	<main>
+	<section>
+		<article>
+			<div class="sobre">
+				<span class="close-sobre"><i class="fa fa-close" aria-hidden="true"></i></span>
+				<h3>Sobre</h3>
+				<p>Esta é uma Calculadora de Cerveja, desenvolvida para auxiliar na escolha dos melhores preços em cervejas e bebidas que variam em tamanhos e valores.</p>
+				<p>A idéia apareceu perante a necessidade de fazer alguns cálculos para saber qual o melhor custo benefício, sendo que os preços e os tamanhos dos frascos variam e confundem os consumidores.</p>
+				<p>O cálculo é simples, dividir o valor (R$) do produto pelo tamanho (ml) e descobrir o valor de cada ml, ou seja (valor / tamanho) descobrindo qual produto tem o seu ml mais barato dentre os cadastrados.</p>
+				<p>Desenvolvido por <a href="http://www.bcabral.com.br" target="_blank">Bruno Cabral</a>, utilizando HTML5, CSS3, JavaScript, Jquery e Bootstrap 4.</p>
+			</div>
+		</article>
+
+		<article>
+			<div class="tutorial">
+				<span class="close-tutorial"><i class="fa fa-close"></i></span>
+				<h3>Aprenda</h3>
+				<p>Para usar, basta cadastrar as cervejas que devem ser comparadas. Primeiro coloque o Rótulo (nome da marca da cerveja), após coloque o Tamanho da embalagem (em ml) e depois coloque o Valor (R$), após preencher os 3 campos clique no botão <span class="add"><i class="fa fa-plus"></i></span> para adicionar a tabela a cerveja.</p>
+				<p>Caso queira apagar as informações no formulário clique no botão <span class="rmv"><i class="fa fa-eraser"></i></span> ou se quiser deletar uma cerveja já adicionada na tabela, clique no icone <i class="fa fa-trash"></i>.</p>
+				<p>Após o cálculo, a melhor opção será colorido com a cor <span class="melhor"></span>  automaticamente. Se a melhor opção for apagada, será necessário clicar no botão <span class="calc"><i class="fa fa-calculator"></i></span> para calcular novamente (em caso de ter mais de duas cervejas na tabela de comparação).</p>
+			</div>
+		</article>
+
+		<article>
+			<div class="calculadora-bar">
+				<span class="close-calculadora-bar"><i class="fa fa-close"></i></span>
+				<h3>Calculadora de Bar</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione a quisquam, necessitatibus quidem. Praesentium, in, omnis! Ipsum accusantium, nobis labore cupiditate. Accusantium, ut porro natus rem officiis qui obcaecati vel.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem ducimus impedit, nihil voluptate non inventore quod voluptatibus earum neque et aliquid, totam cum eum sunt consectetur adipisci aperiam consequuntur, nesciunt.</p>
+			</div>
+		</article>
+	</section>
+	<section>
+	<p class="mensagem">Preencha todos os campos</p>
+
+	<form class="calcula-breja" onsubmit="calculaController.adiciona(event)">
+		<div class="box-breja">
+			<label for="nome" class="label-breja"><i class="fa fa-tag fa-lg" aria-hidden="true"></i></label>
+		    <input class="input-breja" id="nome" placeholder=" Rótulo" autofocus required>
+	    </div><!--box-breja-->   
+	    <div class="box-breja">
+		    <label for="tamanho" class="label-breja"><i class="fa fa-beer fa-lg" aria-hidden="true"></i></label>
+		    <input class="input-breja" placeholder=" Tamanho em ml" id="tamanho" type="tel" required>
+	    </div><!--box-breja-->
+	    <div class="box-breja">
+		    <label for="valor" class="label-breja"><span id="r">R</span><i class="fa fa-usd fa-lg" aria-hidden="true"></i></label>
+		    <input class="input-breja" placeholder=" Valor" id="valor" type="tel" >
+	    </div><!--box-breja-->
+
+	    <div class="botoes">
+		    <button class="span-butom" id="adiciona" title="Adiciona" type="submit"><a class="font-link" href="#"><i class="fa fa-plus"></i></a></button>
+		    <button class="span-butom" id="limpa" onclick="calculaController.limpaFormulario()"  title="Remover"><a class="font-link" href="#"><i class="fa fa-eraser"></i></a></button>
+		    <button class="span-butom" id="calcula" title="Recalcular" onclick="calculaController.exibeMenor()"><a class="font-link" href="#" ><i class="fa fa-calculator"></i></a></button>
+	    </div><!--botoes-->
+	</form><!--calcula-breja-->
+	</section>
+
+	<section class="comparativo">
+		<h2>Comparativo</h2>
+		<div id="listaCervejas"></div>
+		
+	</section>
+	</main>
+
+	<script src="js/helpers/jquery.min.js"></script>
+  	<script src="js/helpers/jquery.mask.min.js"></script>
+  	<script src="js/helpers/jquery-ui.min.js"></script> 
+  	<script src="js/models/Cadastro.js"></script>
+  	<script src="js/models/Lista.js"></script>	
+	<script src="js/controllers/CalculaController.js"></script>
+	<script src="js/view/View.js"></script>
+
+	<script>
+		let calculaController = new CalculaController();
+
+		$("#valor").mask("00,00");
+
+
+	</script>
+
+</body>
+</html>
