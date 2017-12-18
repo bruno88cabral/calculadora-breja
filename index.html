@@ -28,7 +28,7 @@
 				<p>Esta é uma Calculadora de Cerveja, desenvolvida para auxiliar na escolha dos melhores preços em cervejas e bebidas que variam em tamanhos e valores.</p>
 				<p>A idéia apareceu perante a necessidade de fazer alguns cálculos para saber qual o melhor custo benefício, sendo que os preços e os tamanhos dos frascos variam e confundem os consumidores.</p>
 				<p>O cálculo é simples, dividir o valor (R$) do produto pelo tamanho (ml) e descobrir o valor de cada ml, ou seja (valor / tamanho) descobrindo qual produto tem o seu ml mais barato dentre os cadastrados.</p>
-				<p>Desenvolvido por <a href="http://www.bcabral.com.br" target="_blank">Bruno Cabral</a>, utilizando HTML5, CSS3, JavaScript, Jquery e Bootstrap 4.</p>
+				<p>Desenvolvido por <a href="http://www.bcabral.com.br" target="_blank">Bruno Cabral</a>, utilizando padrões MVC, JavaScript ES6, Jquery como helper, CSS foi desenvolvido em SASS e Bootstrap4.</p>
 			</div>
 		</article>
 
@@ -69,9 +69,9 @@
 	    </div><!--box-breja-->
 
 	    <div class="botoes">
-		    <button class="span-butom" id="adiciona" title="Adiciona" type="submit"><a class="font-link" href="#"><i class="fa fa-plus"></i></a></button>
-		    <button class="span-butom" id="limpa" onclick="calculaController.limpaFormulario()"  title="Remover"><a class="font-link" href="#"><i class="fa fa-eraser"></i></a></button>
-		    <button class="span-butom" id="calcula" title="Recalcular" onclick="calculaController.exibeMenor()"><a class="font-link" href="#" ><i class="fa fa-calculator"></i></a></button>
+		    <button class="span-butom" id="adiciona" title="Adiciona" type="submit"><i class="fa fa-plus"></i></button>
+		    <button class="span-butom" id="limpa" onclick="calculaController.limpaFormulario()"  title="Remover"><i class="fa fa-eraser"></i></button>
+		    <button class="span-butom" id="calcula" title="Recalcular" onclick="calculaController.exibeMenor()"><i class="fa fa-calculator"></i></button>
 	    </div><!--botoes-->
 	</form><!--calcula-breja-->
 	</section>
@@ -93,10 +93,31 @@
 
 	<script>
 		let calculaController = new CalculaController();
+	</script>
 
-		$("#valor").mask("00,00");
+	<script>
+		$("#valor").mask("0,00");
 
+		//abre fecha sobre
+		$("nav a:first-child").click(()=>$("body").addClass('open-sobre'));
+		$(".close-sobre").click(()=>$("body").removeClass('open-sobre'));
 
+		//abre fecha tutorial
+		$("nav a:nth-child(2)").click(()=>$("body").addClass('open-tutorial'));
+		$(".close-tutorial").click(()=>$("body").removeClass('open-tutorial'));
+
+		//abre fecha calculadora-bar
+		$("nav a:last-child").click(()=>$("body").addClass('open-calculadora-bar'));
+		$(".close-calculadora-bar").click(()=>$("body").removeClass('open-calculadora-bar'));
+	</script>
+
+	<script>
+		$(()=>{
+		  var tagsRotulos = ["Brahma","Skol","Antartica","Kaiser","Amstel","Heineken","Budweiser","Conti","1500","Burguesa","Colorado","Baden Baden","Stella Artois","Proibida","Paulaner","Original","Serramalte","Bohemia","Bavaria","Devassa","Sol","Corona","Quilmes","Norteña"];
+		  var tagsVolumes = ["550 ml","350 ml","600 ml","1000 ml","473 ml","355 ml","300 ml"];
+		  $("#nome").autocomplete({source: tagsRotulos});
+		  $("#tamanho").autocomplete({source: tagsVolumes});
+		});
 	</script>
 
 </body>
