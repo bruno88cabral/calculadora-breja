@@ -1,0 +1,31 @@
+.comparativo{
+	margin-top: 2rem;
+	h2{
+		@extend .col-sm-12;
+		text-align: center;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		border: 0;	
+	}
+	.table{
+		font-size: .85rem;
+		border: 0;
+		text-align: center;
+		thead tr th{
+			text-align: center;
+		}
+		tbody tr td:last-child,
+		tbody tr td:nth-last-child(3),
+		thead tr th:last-child,
+		:nth-last-child(3){
+			
+		}
+		thead th, th, td{
+			border: 0;
+		}
+		tbody tr td a{
+			color: #2994B2;
+		}
+
+	}
+}

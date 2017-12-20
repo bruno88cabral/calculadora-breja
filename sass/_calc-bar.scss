@@ -1,0 +1,56 @@
+.calculadora-bar{
+	line-height: 1.2rem;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: -100%;
+	z-index: 4;	
+	background-color: #2B2E4A;
+	padding: 1rem 1.3rem;
+	color: #903749;
+	overflow-y: scroll;
+	@include transition(right 0.5s);
+	@media(min-width: map-get($grid-breakpoints,md)){
+		overflow-y: hidden;
+	}
+	span{
+		color: #E84545;
+		float: right;
+		font-size: 1.3rem;
+	}
+	h3{
+		text-align: center;
+		margin: 1.2rem 0;
+		text-transform: uppercase;			
+		font-weight: bolder;
+		@media(min-width: map-get($grid-breakpoints,md)){
+			margin-bottom: 3rem;
+		}		
+	}
+	p{
+		line-height: 1.5rem;
+		font-family: monospace;
+		font-weight: bold;		
+		text-align: justify;
+		@media(min-width: map-get($grid-breakpoints,md)){
+			padding: 0 4rem;
+		}
+	}
+}
+.open-calculadora-bar{
+	&:after{
+		content:"";
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 3;
+	}	
+	.calculadora-bar{
+	@extend .clearfix;
+	right: 0;
+	width: 100%;
+	}
+}

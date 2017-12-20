@@ -1,0 +1,36 @@
+@import "../components/bootstrap/scss/bootstrap.scss";
+@import "../components/components-font-awesome/scss/font-awesome.scss";
+
+@import "fonts";
+@import "reset";
+@import "comparativo";
+@import "sobre";
+@import "tutorial";
+@import "calc-bar";
+@import "formulario";
+@import "navbar";
+
+.menor{
+	color: #FFB400;
+	background-color: #2994B2;
+	border: #2994B2;
+	font-weight: bold;
+	.remover{
+		.botao-remover{
+		color: #474744;
+		}
+	}	
+}
+section{
+	@extend .clearfix;
+}
+
+
+
+
+
+
+
+
+
+

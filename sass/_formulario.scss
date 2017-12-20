@@ -1,0 +1,106 @@
+.calcula-breja{
+	@media(min-width: map-get($grid-breakpoints,md)){
+		margin-top: 1rem;
+	}
+	.box-breja{
+		@extend .col-sm-12;
+		@extend .col-md-4;
+		text-align: center;
+		margin: .5rem 0rem;
+		.label-breja{	
+			float: left;
+			width: 15%;
+			line-height: 3rem;
+			background: #ffc333;
+			i{	
+				padding: .45rem 0;
+				color: #FFFBE0;				
+			}
+		}
+		.input-breja{
+			width: 85%;
+			height: 3rem;
+			background: #ffc333;
+			color: #FFFBE0;
+			font-weight: bolder;
+			font-size: 1.1rem;	
+		}
+	}
+	.box-breja:first-child, .box-breja:nth-child(2){
+			margin-bottom: 0.8rem;
+	}
+	.botoes{
+		@extend .col-sm-12;
+		padding-top: .8rem;
+		margin-top: 1rem;
+		.span-butom{
+			border-radius: 50%;
+			margin-right: .8rem;
+		
+			&:first-child{			
+				background-color: transparent;	
+				border: 1px solid #2C82C9;				
+				padding: .9rem 1rem; //deixa o botao adicionar redondo
+				a{
+					color: #2C82C9;
+				}
+			}
+			&:nth-child(2){			
+				background-color: transparent;
+				border: 1px solid #E22211;	
+				padding: .9rem;
+				a{
+					color: #E22211;
+				}
+			}
+			&:last-child{
+				background-color: transparent;
+				border: 1px solid #1E824C;	
+				padding: .9rem;
+				a{	
+					color: #1E824C;
+				}
+			}
+		}
+	}	
+}
+input::-webkit-input-placeholder{
+    color: #FFFBE0;
+    font-size: 1rem;
+    letter-spacing: .02rem;
+    opacity: 0.7;
+}
+input::-moz-input-placeholder{
+	color: #FFFBE0;
+    font-size: 1rem;
+    letter-spacing: .02rem;
+    opacity: 0.7;
+}
+
+.mensagem{
+	@extend .col-sm-12;
+	display: none;
+	text-align: center;
+	color: #E22211;
+	font-weight: bolder;
+}
+//estilo do autocomplete
+#ui-id-1,
+#ui-id-2{
+	background-color: #ffc333;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 1rem;
+	color: #FFFBE0;
+	border: 0;
+}
+#r{
+	color: #FFFBE0;
+	font-weight: bold;
+	font-size: 1.3rem;
+	line-height: 0;
+	padding-right: 0.1rem;
+	position: relative;
+	top: .12rem;
+	left: .08rem;
+}

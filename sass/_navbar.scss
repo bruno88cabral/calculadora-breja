@@ -1,0 +1,36 @@
+h1{
+	@extend .col-sm-5;
+	font-size: 3rem;
+	text-align: center;
+	margin: 1rem 0;
+	font-family: "breja";
+	font-weight: bold;
+	margin-top: 3rem;
+	color: #ffc333;
+	@media(min-width: map-get($grid-breakpoints,lg)){
+		text-align: left;
+	}	
+}
+.navbar{
+	@extend .col-sm-7;
+	@media(min-width: map-get($grid-breakpoints,lg)){
+		text-align: left;
+	}
+	.nav-link{
+		width: 29%;
+		text-align: center;
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+		color: #2994B2;
+		font-family: "navbar";
+		word-spacing: 0.2rem;
+		@media(min-width: map-get($grid-breakpoints,md)){
+			margin-bottom: 0rem;
+			margin-top: 2rem;
+		}
+		@media(min-width: map-get($grid-breakpoints,lg)){
+			margin-bottom: 0rem;
+			margin-top: 3.5rem;
+		}
+	}	
+}
